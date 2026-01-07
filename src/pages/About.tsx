@@ -27,15 +27,24 @@ const About = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative section-padding overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-radial from-primary/10 via-background to-background" />
-        <div className="container-custom relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-slide-up">
+      {/* Hero Section with Background Image */}
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1920&q=80)',
+          }}
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+        
+        <div className="container-custom relative z-10 px-4 md:px-8">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white animate-slide-up">
               About <span className="gradient-text">NOVA</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            <p className="text-xl text-white/90 leading-relaxed animate-slide-up" style={{ animationDelay: '0.1s' }}>
               We're on a mission to bring premium technology to everyone. Founded in 2020, NOVA has grown from a small passion project to a trusted destination for tech enthusiasts worldwide.
             </p>
           </div>
@@ -43,7 +52,7 @@ const About = () => {
       </section>
 
       {/* Story Section */}
-      <section className="section-padding bg-card/30">
+      <section className="section-padding bg-secondary/30">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-up">
@@ -69,7 +78,7 @@ const About = () => {
                   { value: '500+', label: 'Products' },
                   { value: '50+', label: 'Countries' },
                   { value: '4.9', label: 'Avg Rating' },
-                ].map((stat, index) => (
+                ].map((stat) => (
                   <div key={stat.label} className="text-center p-4">
                     <p className="text-3xl md:text-4xl font-bold gradient-text">{stat.value}</p>
                     <p className="text-muted-foreground mt-1">{stat.label}</p>
@@ -112,10 +121,10 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-card/30">
+      <section className="section-padding bg-secondary/30">
         <div className="container-custom">
           <div className="glass-card p-8 md:p-12 text-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-radial from-primary/10 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Ready to Experience <span className="gradient-text">Excellence?</span>
